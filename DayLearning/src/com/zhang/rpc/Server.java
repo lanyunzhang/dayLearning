@@ -51,7 +51,6 @@ public class Server {
 	}
 	
 	private void read(SelectionKey key) throws IOException{
-		System.out.println("haha");
 		SocketChannel socketChannel = (SocketChannel) key.channel();
 		this.readBuffer.clear();
 		
@@ -87,7 +86,7 @@ public class Server {
 		ServerSocketChannel ssc = (ServerSocketChannel) key.channel();
 		SocketChannel clientChannel = ssc.accept();
 		clientChannel.configureBlocking(false);
-		clientChannel.register(selector, SelectionKey.OP_WRITE);
+		clientChannel.register(selector, SelectionKey.OP_READ);
 		System.out.println("a new client connected.");
 	}
 

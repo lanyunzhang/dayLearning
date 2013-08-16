@@ -40,7 +40,9 @@ public class Client {
 					break;
 				}else if (key.isWritable()){
 					System.out.println("please input message");
+					
 					String message = scanner.nextLine();
+					System.out.println("message");
 					ByteBuffer writeBuffer = ByteBuffer.wrap(message.getBytes());
 					sc.write(writeBuffer);
 					
