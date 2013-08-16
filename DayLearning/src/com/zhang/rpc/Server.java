@@ -51,6 +51,7 @@ public class Server {
 	}
 	
 	private void read(SelectionKey key) throws IOException{
+		System.out.println("haha");
 		SocketChannel socketChannel = (SocketChannel) key.channel();
 		this.readBuffer.clear();
 		

@@ -43,6 +43,7 @@ public class Client {
 					String message = scanner.nextLine();
 					ByteBuffer writeBuffer = ByteBuffer.wrap(message.getBytes());
 					sc.write(writeBuffer);
+					
 				}
 			}
 		}
