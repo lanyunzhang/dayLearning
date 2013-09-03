@@ -16,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Server {
 	
 	private Selector selector;
-	private ByteBuffer readBuffer = ByteBuffer.allocate(8);
+	private ByteBuffer readBuffer = ByteBuffer.allocate(100);
 	private Map<SocketChannel,byte[]> clientMessage = new ConcurrentHashMap<SocketChannel,byte[]>();
 	
 	private void start() throws IOException{
@@ -93,7 +93,6 @@ public class Server {
 	public static void main(String[] args) throws IOException{
 		System.out.println("Server is start to running...");
 		new Server().start();
-		
 		
 	}
 }
